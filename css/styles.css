@@ -3,3 +3,41 @@
     padding: 0;
     box-sizing: content-box;
 }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    padding: 20px;
+    background-color: #4ba7fd;
+    color: white;
+}
+
+.content {
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.todo-list {
+
+}
+
+.todo-list-item {
+    margin: 15px 0;
+    padding: 20px;
+    background-color: #fafafa;
+    color: #2f314f;
+    box-shadow: 3px 3px 5px 2px #ccc;
+    list-style: none;
+}
+
+.todo-list-item > label {
+    margin-left: 5px;
+}
+
+.footer {
+    padding: 10px;
+    background-color: #78bdfd;
+    color: white;
+}
