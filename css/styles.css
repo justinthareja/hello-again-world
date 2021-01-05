@@ -23,7 +23,12 @@ body {
 
 }
 
-.todo-item {
+.completed {
+    text-decoration: line-through;
+}
+
+.todo-item,
+.todo-input {
     margin: 15px 0;
     padding: 20px;
     background-color: #fafafa;

@@ -1,11 +1,11 @@
 let Todo = (function() {
-    let $todoList;
+    let $todoList, $todoInput;
     let todos = [{
-        id: 1,
+        id: 0,
         text: "thing 1 from js",
-        isCompleted: false
+        isCompleted: true
     }, {
-        id: 2,
+        id: 1,
         text: "thing 2 from js",
         isCompleted: false
     }];
@@ -13,17 +13,39 @@ let Todo = (function() {
 
     function init() {
         $todoList = document.querySelector("[rel=js-todo-list]");
-        
+        $todoInput = document.querySelector("[rel=js-todo-input]");
+
         $todoList.addEventListener("click", handleTodoItemClick);
+        $todoInput.addEventListener("keydown", handleTodoInputKeyDown)
 
         EVT.on("todo-clicked", function(id) {
             toggleTodo(id);
             render();
         });
 
+        EVT.on("submit-todo", function(text) {
+            addTodo(text);
+            render();
+        })
+
         render();
     }
 
+    function addTodo(text) {
+        const todo = {
+            id: todos.length,
+            isCompleted: false,
+            text,
+        };
+        
+        todos.push(todo);
+    }
+    
+    function removeTodo(id) {
+        todos = todos.filter(function (todo) {
+            return todo.id !== id;
+        });
+    }
 
     function toggleTodo(id) {
         todos = todos.map(function(todo) {
@@ -33,9 +55,14 @@ let Todo = (function() {
 
             return todo;
         });
-
-        return todos;
     };
+    
+    function handleTodoInputKeyDown(e) {
+        if (e.key === "Enter") {
+            EVT.emit("submit-todo", e.target.value);
+            e.target.value = "";
+        }
+    }
 
     function handleTodoItemClick(e) {
         e.preventDefault();
@@ -48,41 +75,32 @@ let Todo = (function() {
 
         const id = e.target.getAttribute("rel").replace(/\D/g, "");
 
-        EVT.emit("todo-clicked", id);
+        EVT.emit("todo-clicked", Number(id));
     }
 
     // Takes a todo model and returns the corresponding HTML element
     function renderTodo(todo) {
         const { id, text, isCompleted } = todo;
         
-        const $todoItem = document.createElement("li");
-        const $todoInput = document.createElement("input");
-        const $todoLabel = document.createElement("label");
-
-        $todoInput.setAttribute("type", "checkbox");
-        $todoInput.setAttribute("id", `todo-item-${id}`);
-        $todoInput.setAttribute("rel", `js-todo-item-${id}`);
-        $todoInput.checked = isCompleted;
-
-        $todoLabel.setAttribute("for", `todo-item-${id}`);
-        $todoLabel.append(text);
-
-        $todoItem.setAttribute("class", "todo-item");
-        $todoItem.appendChild($todoInput);
-        $todoItem.appendChild($todoLabel);
-
-        return $todoItem;
+        return (`
+            <li class="todo-item ${isCompleted && "completed"}">
+                <input type="checkbox" id="todo-item-${id}" rel="js-todo-item-${id}" ${isCompleted && "checked"}>
+                <label for="todo-item-${id}">${text}</label>
+            </li>
+        `);
     }
 
     function render() {
-        $todoList.innerHTML = "";
-
-        todos.forEach(function(todo) {
-            $todoList.appendChild(renderTodo(todo));
-        });
+        const todoElements = todos
+            .map(renderTodo)
+            .join("");
+        
+        $todoList.innerHTML = todoElements;
     }
 
     EVT.on("init", init);
+
+    let publicApi = {};
 
     return {
 
