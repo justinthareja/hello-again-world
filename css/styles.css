@@ -41,7 +41,12 @@ body {
     margin-left: 5px;
 }
 
+.todo-input {
+    display: flex;
+}
+
 .todo-input input {
+    flex: 1;
     background-color: inherit;
     font-size: 1em;
     border: none;
