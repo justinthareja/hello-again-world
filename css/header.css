@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px;
+    background-color: #4ba7fd;
+    color:  #fafafa;
+}
+
+.header a {
+    text-decoration: none;
+    color: #fafafa;
+    font-size: .9em;
+}
+
+.header a:hover {
+    color: #fadca5;
+}
+
+.header a:active {
+    color: #fafafa;
+}

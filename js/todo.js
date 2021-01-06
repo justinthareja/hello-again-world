@@ -1,5 +1,6 @@
 let Todo = (function() {
     let $todoList, $todoInput;
+    let todoFilter = "all";
     let todos = [{
         id: 0,
         text: "thing 1 from js",
@@ -46,6 +47,14 @@ let Todo = (function() {
             return todo;
         });
     };
+
+    function getRemainingTodos() {
+        return todos.filter(todo => !todo.isCompleted);
+    }
+
+    function getTodos() {
+        return todos;
+    }
     
     function handleTodoInputKeyDown(e) {
         if (e.key === "Enter") {
@@ -69,17 +78,26 @@ let Todo = (function() {
         const { id, text, isCompleted } = todo;
         
         return (`
-            <li class="todo-item ${isCompleted && "completed"}">
-                <input type="checkbox" id="todo-item-${id}" rel="js-todo-item-${id}" ${isCompleted && "checked"}>
+            <li class="todo-item ${isCompleted ? "completed" : ""}">
+                <input 
+                    type="checkbox" 
+                    id="todo-item-${id}" 
+                    rel="js-todo-item-${id}" 
+                    ${isCompleted ? "checked" : ""}
+                >
                 <label for="todo-item-${id}">${text}</label>
             </li>
         `);
     }
 
     function render() {
-        const todoElements = todos
-            .map(renderTodo)
-            .join("");
+        let todoElements;
+
+        if (todoFilter === "remaining") {
+            todoElements = getRemainingTodos().map(renderTodo).join("");
+        } else { // Default to rendering all todos
+            todoElements = getTodos().map(renderTodo).join("")
+        }
         
         $todoList.innerHTML = todoElements;
     }
@@ -93,7 +111,17 @@ let Todo = (function() {
     EVT.on("submit-todo", function (text) {
         addTodo(text);
         render();
-    })
+    });
+
+    EVT.on("hide-completed-click", function() {
+        todoFilter = "remaining";
+        render();
+    });
+
+    EVT.on("show-completed-click", () => {
+        todoFilter = "all";
+        render();
+    });
 
     return {
 
