@@ -41,6 +41,20 @@ body {
     margin-left: 5px;
 }
 
+.todo-input input {
+    background-color: inherit;
+    font-size: 1em;
+    border: none;
+}
+
+.todo-input input:focus {
+    outline: none;
+}
+
+.todo-input label {
+    display: none;
+}
+
 .footer {
     padding: 10px;
     background-color: #78bdfd;
