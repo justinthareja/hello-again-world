@@ -18,27 +18,17 @@ let Todo = (function() {
         $todoList.addEventListener("click", handleTodoItemClick);
         $todoInput.addEventListener("keydown", handleTodoInputKeyDown)
 
-        EVT.on("todo-clicked", function(id) {
-            toggleTodo(id);
-            render();
-        });
-
-        EVT.on("submit-todo", function(text) {
-            addTodo(text);
-            render();
-        })
-
         render();
     }
 
     function addTodo(text) {
-        const todo = {
+        const newTodo = {
             id: todos.length,
             isCompleted: false,
             text,
         };
         
-        todos.push(todo);
+        todos.push(newTodo);
     }
     
     function removeTodo(id) {
@@ -49,7 +39,7 @@ let Todo = (function() {
 
     function toggleTodo(id) {
         todos = todos.map(function(todo) {
-            if (todo.id === Number(id)) {
+            if (todo.id === id) {
                 todo.isCompleted = !todo.isCompleted;
             }
 
@@ -65,10 +55,6 @@ let Todo = (function() {
     }
 
     function handleTodoItemClick(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
-
         if (!e.target.matches("[rel^=js-todo-item-]")) {
             return;
         }
@@ -99,8 +85,15 @@ let Todo = (function() {
     }
 
     EVT.on("init", init);
+    EVT.on("todo-clicked", function (id) {
+        toggleTodo(id);
+        render();
+    });
 
-    let publicApi = {};
+    EVT.on("submit-todo", function (text) {
+        addTodo(text);
+        render();
+    })
 
     return {
 
