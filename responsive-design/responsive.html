@@ -10,10 +10,32 @@
     <div class="page">
         <div class="section menu"></div>
         <div class="section header">
-            <img src="images/header.svg" alt="">
+            <div class="photo">
+                <!-- Example using sizes attribute -->
+                <!-- <img 
+                    src="images/photo-small.jpg" 
+                    srcset="images/photo-big.jpg 2000w,
+                            images/photo-small.jpg 1000w"
+                    sizes="(min-width: 960px) 960px, 100vw"
+                    alt=""/> -->
+
+                <!-- Example for conditional rendering of images -->
+                <picture>
+                    <source media="(min-width: 401px)" srcset="images/photo-big.jpg">
+                    <source media="(max-width: 400px)" srcset="images/photo-tall.jpg">
+                    <!-- Requires <img> fallback in order to render any of the <source>s above -->
+                    <img src="images/photo-small.jpg" alt="" srcset="">
+                </picture>
+            </div>
         </div>
         <div class="section content">
-            <img src="images/content.svg" alt="">
+            <div class="illustration">
+                <img 
+                    src="images/illustration-small.png" 
+                    srcset="images/illustration-small.png 1x,
+                            images/illustration-big.png 2x"
+                    style="max-width: 500px;" alt="">
+            </div>
         </div>
         <div class="section sign-up">
             <img src="images/sign-up.svg" alt="">
