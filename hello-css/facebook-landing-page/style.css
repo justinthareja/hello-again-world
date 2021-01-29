@@ -47,15 +47,18 @@ body {
 }
 
 .subtitle {
-    font-size: 31px;
+    font-size: 24px;
     color: var(--grey-900);
+}
+
+.right-side {
+    width: 95%;
 }
 
 .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 95%;
     padding: 0.8em;
     margin-bottom: 1.5em;
 
@@ -132,5 +135,48 @@ p {
 }
 
 @media only screen and (min-width: 900px) {
-    /* TODO */
+    html, 
+    body {
+        height: 100%
+    }
+
+    body {
+        align-items: center;
+        padding: 0 40px;
+    }
+
+    .content {
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-items: center; */
+        width: 100%;
+    }
+
+    .title {
+        position: relative;
+        left: -36px;
+    }
+    .header {
+        text-align: left;
+        max-width: 400px;
+    }
+
+    .right-side {
+        width: 500px;
+    }
+}
+
+@media only screen and (min-width: 1075px) {
+    body {
+        padding: 0 60px;
+        width: 1075px;
+    }
+
+    .header {
+        max-width: 500px;
+    }
+
+    .subtitle {
+        font-size: 32px;
+    }
 }
