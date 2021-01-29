@@ -1,0 +1,87 @@
+:root {
+    --pixels-4: 4px;
+    --pixels-8: 8px;
+    --pixels-12: 12px;
+    --pixels-16: 16px;
+    --pixels-24: 24px;
+    --pixels-32: 32px;
+    --pixels-48: 48px;
+    --pixels-64: 64px;
+    --pixels-96: 96px;
+    --pixels-128: 128px;
+    --pixels-192: 192px;
+    --pixels-256: 256px;
+    --pixels-384: 384px;
+    --pixels-512: 512px;
+    --pixels-640: 640px;
+    --pixels-768: 768px;
+    }
+
+h1 {
+    color: rgb(134, 84, 37);
+}
+
+.four {
+    font-size: var(--pixels-4);
+}
+
+.eight {
+    font-size: var(--pixels-8);
+}
+
+.twelve {
+    font-size: var(--pixels-12);
+}
+
+.sixteen {
+    font-size: var(--pixels-16);
+}
+
+.twenty-four {
+    font-size: var(--pixels-24);
+}
+
+.thirty-two {
+    font-size: var(--pixels-32);
+}
+
+.fourty-eight {
+    font-size: var(--pixels-48);
+}
+
+.sixty-four {
+    font-size: var(--pixels-64);
+}
+
+.ninety-six {
+    font-size: var(--pixels-96);
+}
+
+.one-twenty-eight {
+    font-size: var(--pixels-128);
+}
+
+.one-ninety-two {
+    font-size: var(--pixels-192);
+}
+
+.two-fifty-six {
+    font-size: var(--pixels-256);
+}
+
+.three-eighty-four {
+    font-size: var(--pixels-384);
+}
+
+.five-twelve {
+    font-size: var(--pixels-512);
+}
+
+.six-fourty {
+    font-size: var(--pixels-640);
+}
+
+.seven-sixty-eight {
+    font-size: var(--pixels-768);
+}
+
