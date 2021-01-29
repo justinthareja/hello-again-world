@@ -135,13 +135,13 @@ p {
 }
 
 @media only screen and (min-width: 900px) {
-    html, 
-    body {
+    html {
         height: 100%
     }
 
     body {
         align-items: center;
+        min-height: 100%;
         padding: 0 40px;
     }
 
@@ -169,9 +169,12 @@ p {
 @media only screen and (min-width: 1075px) {
     body {
         padding: 0 60px;
-        width: 1075px;
     }
 
+    .content {
+        width: 1075px;
+    }
+    
     .header {
         max-width: 500px;
     }
