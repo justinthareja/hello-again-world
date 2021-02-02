@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --tw-blue: rgba(29,161,242,1.00);
+
+    --w-1: 4px;
+    --w-2: 8px;
+    --w-3: 12px;
+    --w-4: 16px;
+    --w-5: 24px;
+    --w-6: 32px;
+    --w-7: 48px;
+    --w-8: 64px;
+    --w-9: 96px;
+    --w-10: 128px;
+    --w-11: 192px;
+    --w-12: 256px;
+    --w-13: 384px;
+    --w-14: 512px;
+    --w-15: 640px;
+    --w-16: 768px;
+}
+
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.header {
+    padding: 48px;
+}
+
+.logo-container {
+    margin-bottom: 48px;
+}
+
+.logo {
+    height: 56px;
+    fill: var(--tw-blue);
+}
+
+.heading-primary-main {
+    display: block;
+    margin-bottom: 48px;
+    font-size: 44px;
+}
+
+.heading-primary-sub {
+    display: block;
+    margin-bottom: 32px;
+    font-size: 28px;
+}
+
+.button {
+    width: 100%;
+    height: 56px;
+    margin-bottom: 24px;
+
+    font-size: 18px;
+    font-weight: 700;
+    border: 1px solid var(--tw-blue);
+    border-radius: 48px;
+}
+
+.button-sign-up {
+    background-color: var(--tw-blue);
+    color: white;
+}
+
+.button-log-in {
+    background-color: white;
+    color: var(--tw-blue);
+}
+
+
