@@ -5,23 +5,7 @@
 }
 :root {
     --tw-blue: rgba(29,161,242,1.00);
-
-    --w-1: 4px;
-    --w-2: 8px;
-    --w-3: 12px;
-    --w-4: 16px;
-    --w-5: 24px;
-    --w-6: 32px;
-    --w-7: 48px;
-    --w-8: 64px;
-    --w-9: 96px;
-    --w-10: 128px;
-    --w-11: 192px;
-    --w-12: 256px;
-    --w-13: 384px;
-    --w-14: 512px;
-    --w-15: 640px;
-    --w-16: 768px;
+    --tw-grey: rgb(112, 136, 151);
 }
 
 
@@ -77,4 +61,45 @@ body {
     color: var(--tw-blue);
 }
 
+.image-container {
+    position: relative;
+    background: url("img/background.png");
+    background-size: cover;
+    background-position: top;
+    height: 40vh;
+}
 
+.bird {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    max-width: 400px;
+    fill: white;
+}
+
+.footer {
+    padding: 8px 16px;
+}
+
+.footer-links {
+    list-style: none;
+    text-align: center;
+}
+
+.footer-link {
+    display: inline-block;
+    padding: 8px;
+
+}
+
+.footer-link a:link,
+.footer-link a:visited {
+    text-decoration: none;
+    color: var(--tw-grey);
+}
+
+.footer-link a:hover {
+    text-decoration: underline;
+}
