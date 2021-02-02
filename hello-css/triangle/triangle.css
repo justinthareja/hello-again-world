@@ -1,0 +1,28 @@
+li {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    border: 50px solid red;
+}
+
+.colored{
+    border-top: 50px solid red;
+    border-right: 50px solid orange;
+    border-bottom: 50px solid green;
+    border-left: 50px solid blue;
+}
+
+.no-dim {
+    width: 0;
+    height: 0;
+}
+
+.transparent {
+    border-top: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+}
