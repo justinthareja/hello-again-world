@@ -63,10 +63,10 @@ body {
 
 .image-container {
     position: relative;
-    background: url("img/background.png");
+    background: url("img/background-small.png");
     background-size: cover;
     background-position: top;
-    height: 40vh;
+    height: 45vh;
 }
 
 .bird {
@@ -75,7 +75,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 75%;
-    max-width: 400px;
+    max-width: 38vh;
     fill: white;
 }
 
@@ -103,3 +103,4 @@ body {
 .footer-link a:hover {
     text-decoration: underline;
 }
+
