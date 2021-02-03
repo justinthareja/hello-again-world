@@ -15,7 +15,29 @@
     --pixels-512: 512px;
     --pixels-640: 640px;
     --pixels-768: 768px;
-    }
+
+    /* Same system using root font: 16px */
+    --rem-1: 0.25rem;
+    --rem-2: 0.5rem;
+    --rem-3: 0.75rem;
+    --rem-4: 1rem;
+    --rem-5: 1.5rem;
+    --rem-6: 2rem;
+    --rem-7: 3rem;
+    --rem-8: 4rem;
+    --rem-9: 6rem;
+    --rem-10: 8rem;
+    --rem-11: 12rem;
+    --rem-12: 16rem;
+    --rem-13: 24rem;
+    --rem-14: 32rem;
+    --rem-15: 40rem;
+    --rem-16: 48rem;
+}
+
+html {
+    font-size: 16px;
+}
 
 h1 {
     color: rgb(134, 84, 37);
@@ -85,3 +107,70 @@ h1 {
     font-size: var(--pixels-768);
 }
 
+.rem-1 {
+    font-size: var(--rem-1);
+}
+
+.rem-2 {
+    font-size: var(--rem-2);
+}
+
+.rem-3 {
+    font-size: var(--rem-3);
+}
+
+.rem-4 {
+    font-size: var(--rem-4);
+}
+
+.rem-5 {
+    font-size: var(--rem-5);
+}
+
+.rem-6 {
+    font-size: var(--rem-6);
+}
+
+.rem-7 {
+    font-size: var(--rem-7);
+}
+
+.rem-8 {
+    font-size: var(--rem-8);
+}
+
+.rem-9 {
+    font-size: var(--rem-9);
+}
+
+.rem-9 {
+    font-size: var(--rem-9);
+}
+
+.rem-10 {
+    font-size: var(--rem-10);
+}
+
+.rem-11 {
+    font-size: var(--rem-11);
+}
+
+.rem-12 {
+    font-size: var(--rem-12);
+}
+
+.rem-13 {
+    font-size: var(--rem-13);
+}
+
+.rem-14 {
+    font-size: var(--rem-14);
+}
+
+.rem-15 {
+    font-size: var(--rem-15);
+}
+
+.rem-16 {
+    font-size: var(--rem-16);
+}
