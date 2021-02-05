@@ -11,3 +11,7 @@
 .row:nth-of-type(even) {
     background-color: bisque;
 }
+
+td {
+    padding: 10px;
+}

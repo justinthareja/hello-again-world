@@ -10,10 +10,15 @@
 <body>
     <h1 class="header">Star Wars Episodes</h1>
     <div class="content">
-        <select name="episodes" id="episodes" class="episodes js-episodes"></select>
+        <select name="episodes" id="episodes" class="episodes js-episodes">
+            <option value="" disabled selected>Select an episode</option>
+        </select>
         <table class="table">
             <thead class="table-head"></thead>
-            <tbody class="table-body js-table-body"></tbody>
+            <tbody class="table-body js-table-body">
+                <th>title</th>
+                <th>release date</th>
+            </tbody>
         </table>
     </div>
 

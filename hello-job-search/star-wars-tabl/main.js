@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function renderSelectOptions(episodes) {
-
         episodes.forEach((episode) => {
             let $option = document.createElement("option");
 
@@ -40,18 +39,26 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    function removeSelectOption(id) {
+        let $option = $select.querySelector(`[value="${id}"]`);
+        if (!$option) return;
+        
+        $option.remove();
+    }
+
     function handleChange(e) {
         e.preventDefault();
-        let episodeId = e.target.value;
-        let data = episodes.find(episode => episode.episode_id == episodeId);
-
+        let episodeId = Number(e.target.value);
+        let data = episodes.find(episode => episode.episode_id === episodeId);
+        
         if (!data || !data.title || !data.release_date) {
             console.log("data object is invalid");
             return false;
         }
-
-        // TODO: remove target episode from the select because its now rendered on the table
+        
+        
         renderTableRow(data);
+        removeSelectOption(data.episode_id);
     }
     
     function renderTableRow(data) {
