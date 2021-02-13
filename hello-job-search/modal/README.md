@@ -1,0 +1,1 @@
+From: https://www.reddit.com/r/Frontend/comments/jtj9e5/how_to_prepare_for_a_front_end_interview/?utm_source=share&utm_medium=ios_app&utm_name=iossmf
