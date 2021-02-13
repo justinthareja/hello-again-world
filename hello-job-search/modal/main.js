@@ -6,6 +6,7 @@ const $modalAccept = document.querySelector(".js-accept");
 const $content = document.querySelector(".js-content");
 
 let number = 0;
+let isOpen = false;
 
 $showOfferButtons.forEach($button =>
     $button.addEventListener("click", handleShowOfferButtonClick)
@@ -14,6 +15,16 @@ $showOfferButtons.forEach($button =>
 $modalClose.addEventListener("click", handleModalCloseClick);
 $modalAccept.addEventListener("click", handleModalAcceptClick);
 $modalOverlay.addEventListener("click", handleModalOverlayClick);
+document.addEventListener("keydown", handleKeyDown);
+
+
+function handleKeyDown(e) {
+    if (!e.keyCode == 27) return;
+    if (!isOpen) return;
+
+    e.preventDefault();
+    closeModal();
+}
 
 function handleShowOfferButtonClick(e) {
     number = e.target.dataset.offer;
@@ -37,11 +48,13 @@ function handleModalOverlayClick(e) {
 }
 
 function openModal() {
+    isOpen = true;
     $modal.style.setProperty("display", "flex");
     $modalOverlay.style.setProperty("display", "flex");
 }
 
 function closeModal() {
+    isOpen = false;
     $modal.style.setProperty("display", "none");
     $modalOverlay.style.setProperty("display", "none");
 }
