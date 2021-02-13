@@ -38,21 +38,33 @@ body {
 }
 
 .modal {
-    border: 1px solid black;
     padding: 20px;
+    border: 1px solid black;
+
+    position: relative;
 
     display: none;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     background-color: white;
 }
 
 .modal-close {
-    align-self: flex-start;
+    position: absolute;
+    top: 8px;
+    left: 8px;
 }
 
 .modal-content {
     padding: 40px 0;
 }
 
+/* Assume mobile web starts at 500px or less */
+@media only screen and (max-width: 500px) {
+    .modal {
+        height: 100vh;
+        width: 100vw;
+    }
+}
