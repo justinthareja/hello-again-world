@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.video-container {
+    position: relative;
+}
+
+.video-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: url(#clip-00);
+}
+
+.video-container:nth-of-type(1) {
+  background: #000000;
+}
+
+.video-container:nth-of-type(1)::after {
+  /* background-color: #122b10; */
+  mix-blend-mode: screen;
+}
+
+.bgvid {
+    display: block;
+    width: 100%;
+
+    clip-path: url(#clip-00);
+}
+
+.clipping-paths {
+    width: 0;
+    height: 0;
+    position: absolute;
+}
